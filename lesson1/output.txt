@@ -1,0 +1,6 @@
+[<span>Mr Anderson</span>, <span>Дата рождения:</span>, <span>01.01.1970</span>, <span class="city__label">Город:</span>, <span>Los Angeles</span>]
+Mr Anderson
+Дата рождения:
+01.01.1970
+Город:
+Los Angeles
