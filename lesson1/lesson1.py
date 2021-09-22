@@ -1,9 +1,15 @@
 from bs4 import BeautifulSoup
 import codecs
 
-with codecs.open("blank/index.html","r","utf-8") as file:
-    src = file.read()
+# index_path = "C:\\Users\\aandry28\\Downloads\\python-2\\lesson1\\blank"
+
+# with codecs.open("%s\index.html" %index_path,"r","utf-8") as file:
+#     src = file.read()
 # print(src)
+
+with open("blank/index.html") as file:
+     src = file.read()
+   # print(src)
 
 soup = BeautifulSoup(src, "lxml")
 
@@ -29,8 +35,25 @@ title = soup.title
 # username = soup.find ("div", {"class": "user__name", "id": "aaa"}).find("span").text
 # print(username)
 
-find_all_spans_in_user_info = soup.find(class_="user__info").find_all("span")
-print(find_all_spans_in_user_info)
+# find_all_spans_in_user_info = soup.find(class_="user__info").find_all("span")
+# print(find_all_spans_in_user_info)
 
-for item in find_all_spans_in_user_info:
-    print(item.text)
+# for item in find_all_spans_in_user_info:
+    # print(item.text)
+
+# social_links = soup.find(class_="social__networks").find("ul").find_all("a")
+# print(social_links)
+
+# all_a = soup.find_all("a")
+# for item in all_a:
+#     item_url = item.get("href")
+#     item_text = item.text
+#     print(f"{item_text}: {item_url}")
+
+# .find_parent() .find_parents()
+
+# post_div = soup.find(class_="post__text").find_parent("div","user__post")
+# print(post_div)
+
+post_divs = soup.find(class_="post__text").find_parents()
+print(post_divs)
